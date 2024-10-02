@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Floor Planner</title>
+</head>
+<body>
+    <!-- Side Panel for Building Elements -->
+    <div id="side-panel">
+        <h2>Building Elements</h2>
+        <div id="layers-container"></div>
+        <button id="add-layer">Add Layer</button>
+        <button id="add-wall">Add Wall</button>
+        <button id="add-window">Add Window</button>
+        <button id="select-roof">Select Roof</button>
+
+        <!-- Roof Settings, displayed when 'Select Roof' is clicked -->
+        <div id="roof-settings" style="display:none;">
+            <h3>Roof Settings</h3>
+            <label>Roof Type: <input id="roof-type" type="text"></label><br>
+            <label>Pitch: <input id="roof-pitch" type="number"></label><br>
+            <label>Length: <input id="roof-length" type="number"></label><br>
+            <label>Width: <input id="roof-width" type="number"></label><br>
+            <button id="update-roof">Update Roof</button>
+        </div>
+        <button id="draw-line">Draw Line</button>
+        <button id="draw-circle">Draw Circle</button>
+        <button id="draw-freehand">Freehand Drawing</button>
+        <button id="undo-action">Undo</button>
+        <button id="redo-action">Redo</button>
+        <button id="delete-object">Delete Selected</button>
+        <button id="save-project">Save Project</button>
+        <button id="export-project">Export Project</button>
+        <button id="export-excel">Export to Excel</button>
+    </div>
+
+    <label>Material Type: 
+        <select id="material-type">
+            <option value="concrete">Concrete</option>
+            <option value="wood">Wood</option>
+            <option value="glass">Glass</option>
+        </select>
+    </label><br>
+    <label>Material Size: <input id="material-size" type="number" min="0" step="0.1"></label><br>
+
+    <!-- Main Drawing Area -->
+    <div id="drawing-area">
+        <div id="floor-plan"></div>
+    </div>
+
+    <!-- Summary Section for Real-time Updates -->
+    <div id="summary-section">
+        <h2>Summary</h2>
+        <div id="element-summary"></div>
+    </div>
+
+    <!-- Include Konva.js for the canvas functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/konva@8.3.6/konva.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/konva/8.4.2/konva.min.js"></script> -->
+    <script src="renderer.js"></script>
+</body>
+</html>

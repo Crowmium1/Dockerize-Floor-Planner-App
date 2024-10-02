@@ -1,0 +1,24 @@
+services:
+  backend:
+    command: /bin/bash
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    volumes:
+      - ./backend:/app  # Mount the backend directory
+      - "C:/Program Files/FreeCAD 0.20/lib:/usr/lib/freecad/lib"  # Mount FreeCAD library
+      - "C:/Program Files/FreeCAD 0.20/bin:/usr/lib/freecad/bin"  # Mount FreeCAD bin
+      - "C:/Users/ljfit/Desktop/Coding Projects/floor-planner-electron/roof_templates:/app/roof_templates"  # Mount roof templates
+    environment:
+      - PYTHONPATH=/usr/lib/freecad/lib
+    ports:
+      - "8000:8000"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules

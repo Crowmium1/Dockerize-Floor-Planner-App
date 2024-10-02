@@ -1,0 +1,38 @@
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin: 0;
+}
+
+#side-panel {
+    width: 300px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#drawing-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+}
+
+#summary-section {
+    width: 300px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#floor-plan {
+    width: 800px;
+    height: 600px;
+    border: 1px solid #000;
+    background-color: #fff;
+    margin: auto;
+}
